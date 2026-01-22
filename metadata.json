@@ -1,5 +1,8 @@
 {
   "name": "Teacher Timetable Alarm App",
   "description": "A comprehensive weekly schedule manager for teachers with automated period alarms, profile management, and notification system.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
 }
