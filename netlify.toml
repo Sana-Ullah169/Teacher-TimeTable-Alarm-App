@@ -1,4 +1,7 @@
 
+[build]
+  publish = "."
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -9,12 +12,17 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
     Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/sw.js"
   [headers.values]
-    Cache-Control = "no-cache"
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Content-Type = "application/javascript"
 
-[build]
-  publish = "."
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Content-Type = "application/json"
